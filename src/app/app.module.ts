@@ -10,6 +10,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { ToolbarComponent } from './shared/toolbar/toolbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http, './assets/i18n/','.json')
@@ -29,7 +30,8 @@ export function HttpLoaderFactory(http: HttpClient){
         deps: [HttpClient]
       }
     }),
-    ToolbarComponent
+    ToolbarComponent,
+    FooterComponent
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
